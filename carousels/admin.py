@@ -20,6 +20,7 @@ class CarouselAdmin(admin.ModelAdmin):
 @admin.register(Slide)
 class SlideAdmin(admin.ModelAdmin):
     search_fields = ('title', 'text', 'button', 'URL')
-    list_display = ('id', 'carousel', 'title', 'button', 'url', 'background', 'position')
-    list_editable = ('title', 'button', 'url', 'position',)
+    list_display = ('id', 'title', 'carousel', 'button', 'url', 'background', 'position')
+    list_display_links = ['id', 'title']
+    # list_editable = ('title', 'button', 'url', 'position', 'background')
     list_filter = ['carousel']

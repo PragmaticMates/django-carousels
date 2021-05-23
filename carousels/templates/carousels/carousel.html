@@ -1,0 +1,60 @@
+{% load i18n %}
+
+{% if not carousel %}
+    {% blocktrans with slug=slug %}Carousel {{ slug }} not found{% endblocktrans %}
+{% else %}
+    <div class="owl-carousel" id="carousel-{{ carousel.slug }}">
+        {% for slide in carousel.slide_set.all %}
+            <div class="carousel-slide" {% if slide.background %}style="background-image: url('{{ slide.background.url }}');"{% endif %}>
+                {% if slide.title %}
+                    <span class="slide-title">{{ slide.title }}</span>
+                {% endif %}
+                {% if slide.text %}
+                    <p class="slide-text">{{ slide.text }}</p>
+                {% endif %}
+                {% if slide.button and slide.url %}
+                    <a class="slide-button btn btn-primary" href="{{ carousel.url }}">{{ slide.button }}</a>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        jQuery(document).ready(function ($) {
+            $('#carousel-{{ carousel.slug }}.owl-carousel').owlCarousel({
+                // TODO: get settings from model instance
+                items: 1,
+                loop: true,
+                dots: true,
+                nav: true,
+                // responsiveClass: true,
+                autoplay: false,
+                // autoplay: true,
+                autoplayHoverPause: true,
+                // autoplayTimeout: 5000,
+                // smartSpeed: 5000,
+                // fluidSpeed: 4000,
+                // autoplaySpeed: 5000,
+                slideTransition: 'linear',
+                center: true,
+                // responsive: {
+                //     0: {
+                //         items: 1,
+                //     },
+                //     576: {
+                //         items: 2.9,
+                //     },
+                //     768: {
+                //         items: 3,
+                //     },
+                //     992: {
+                //         items: 4,
+                //     },
+                //     1200: {
+                //         items: 6,
+                //     }
+                // }
+            });
+        });
+    </script>
+{% endif %}
