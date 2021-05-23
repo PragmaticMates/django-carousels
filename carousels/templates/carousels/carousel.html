@@ -13,7 +13,7 @@
                     <p class="slide-text">{{ slide.text }}</p>
                 {% endif %}
                 {% if slide.button and slide.url %}
-                    <a class="slide-button btn btn-primary" href="{{ carousel.url }}">{{ slide.button }}</a>
+                    <a class="slide-button btn btn-primary" href="{{ slide.url }}">{{ slide.button }}</a>
                 {% endif %}
             </div>
         {% endfor %}
