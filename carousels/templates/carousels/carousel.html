@@ -18,43 +18,9 @@
             </div>
         {% endfor %}
     </div>
-
     <script>
         jQuery(document).ready(function ($) {
-            $('#carousel-{{ carousel.slug }}.owl-carousel').owlCarousel({
-                // TODO: get settings from model instance
-                items: 1,
-                loop: true,
-                dots: true,
-                nav: true,
-                // responsiveClass: true,
-                animateOut: 'fadeOut',
-                autoplay: true,
-                autoplayHoverPause: true,
-                // autoplayTimeout: 5000,
-                smartSpeed: 1000,
-                fluidSpeed: 1000,
-                autoplaySpeed: 1000,
-                slideTransition: 'linear',
-                center: true,
-                // responsive: {
-                //     0: {
-                //         items: 1,
-                //     },
-                //     576: {
-                //         items: 2.9,
-                //     },
-                //     768: {
-                //         items: 3,
-                //     },
-                //     992: {
-                //         items: 4,
-                //     },
-                //     1200: {
-                //         items: 6,
-                //     }
-                // }
-            });
+            $('#carousel-{{ carousel.slug }}.owl-carousel').owlCarousel({{ carousel.settings_as_json|safe }});
         });
     </script>
 {% endif %}

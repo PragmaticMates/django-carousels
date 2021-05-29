@@ -14,3 +14,4 @@ def carousel(slug):
         pass
 
     return data
+
