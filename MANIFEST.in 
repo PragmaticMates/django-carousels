@@ -1,4 +1,4 @@
 include LICENSE
-include README.MD
-recursive-include invoicing/templates *
-recursive-include invoicing/locale *
+include README.md
+recursive-include carousels/templates *
+recursive-include carousels/locale *
