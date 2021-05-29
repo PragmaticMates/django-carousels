@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-carousels',
-    version='0.1.0',
+    version='0.1.1',
     description='Django app for model-based carousels',
     long_description=open('README.md').read(),
     author='Pragmatic Mates',
