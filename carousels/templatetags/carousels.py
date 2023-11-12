@@ -1,7 +1,9 @@
-from django.contrib.staticfiles.templatetags.staticfiles import register
 from django.core.exceptions import ObjectDoesNotExist
+from django import template
 
 from carousels.models import Carousel
+
+register = template.Library()
 
 
 @register.inclusion_tag('carousels/carousel.html')
