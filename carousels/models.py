@@ -2,7 +2,7 @@ import json
 
 from django.db.models import JSONField
 from django.db import models
-from django.utils.translation import ugettext_lazy as _, pgettext_lazy
+from django.utils.translation import gettext_lazy as _, pgettext_lazy
 
 
 class Carousel(models.Model):
